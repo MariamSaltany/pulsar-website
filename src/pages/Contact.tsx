@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, MapPin, Phone, Globe, ShieldCheck, ArrowRight, Terminal, Send } from 'lucide-react';
+import { Mail, MapPin, Terminal, Send, ShieldCheck } from 'lucide-react';
 import { translations } from '../translations';
 
 interface ContactProps {
@@ -13,12 +13,15 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
   const isRtl = lang === 'ar';
 
   return (
-    <div className={`min-h-screen bg-surface-container-low pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden relative ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div 
+      className={`min-h-screen bg-surface-container-low pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden relative ${isRtl ? 'font-arabic' : 'font-sans'}`} 
+      dir={isRtl ? 'rtl' : 'ltr'}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none"></div>
       
       <div className="max-w-screen-2xl mx-auto relative z-10">
-        <header className="mb-10 md:mb-24 text-center md:text-left">
+        <header className="mb-10 md:mb-24 text-center lg:text-start">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,6 +30,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
             <div className="w-2 h-2 bg-pulsar-red animate-pulse rounded-full"></div>
             <span className="font-mono text-[10px] text-pulsar-red font-bold uppercase tracking-[0.3em]">{t.contact.tag}</span>
           </motion.div>
+          
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,11 +43,12 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
               </React.Fragment>
             ))}
           </motion.h1>
+          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-on-surface-variant max-w-2xl text-lg md:text-xl font-light leading-relaxed mx-auto md:mx-0"
+            className="text-on-surface-variant max-w-2xl text-lg md:text-xl font-light leading-relaxed mx-auto lg:mx-0"
           >
             {t.contact.description}
           </motion.p>
@@ -55,28 +60,28 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
             initial={{ opacity: 0, x: isRtl ? 40 : -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="lg:col-span-5 space-y-6 md:space-y-12"
+            className="lg:col-span-5 space-y-6 md:space-y-8"
           >
-            <div className="space-y-6 md:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6">
               {/* Email */}
-              <div className="group flex items-start gap-4 md:gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-lowest hairline-border hover:bg-white transition-colors duration-500">
-                <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
+              <div className="group flex items-start gap-4 md:gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-lowest hairline-border hover:bg-white transition-all duration-500">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
                   <Mail size={24} />
                 </div>
-                <div>
+                <div className="overflow-hidden">
                   <span className="block font-mono text-[10px] text-on-surface-variant/50 uppercase tracking-[0.2em] mb-2">Direct_Channel</span>
-                  <span className="block text-xl font-headline font-bold text-on-surface tracking-tight">{t.contact.info.email}</span>
+                  <span className="block text-lg md:text-xl font-headline font-bold text-on-surface tracking-tight truncate">{t.contact.info.email}</span>
                 </div>
               </div>
 
               {/* Location */}
-              <div className="group flex items-start gap-4 md:gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-lowest hairline-border hover:bg-white transition-colors duration-500">
-                <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
+              <div className="group flex items-start gap-4 md:gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-lowest hairline-border hover:bg-white transition-all duration-500">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
                   <MapPin size={24} />
                 </div>
                 <div>
                   <span className="block font-mono text-[10px] text-on-surface-variant/50 uppercase tracking-[0.2em] mb-2">HQ_Coordinates</span>
-                  <span className="block text-xl font-headline font-bold text-on-surface tracking-tight">{t.contact.info.location}</span>
+                  <span className="block text-lg md:text-xl font-headline font-bold text-on-surface tracking-tight">{t.contact.info.location}</span>
                   <span className="block font-mono text-[10px] text-on-surface-variant/40 mt-2">{t.contact.info.coordinates}</span>
                 </div>
               </div>
@@ -84,8 +89,8 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
 
             {/* System Status Strip */}
             <div className="p-6 md:p-8 rounded-2xl bg-on-surface text-surface flex items-center justify-between overflow-hidden relative">
-              <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <Terminal className="absolute -right-4 -bottom-4 rotate-12" size={120} />
+              <div className={`absolute inset-0 opacity-10 pointer-events-none ${isRtl ? '-scale-x-100' : ''}`}>
+                <Terminal className="absolute -inline-end-4 -bottom-4 rotate-12" size={120} />
               </div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-2">
@@ -105,8 +110,9 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
             transition={{ delay: 0.4 }}
             className="lg:col-span-7"
           >
-            <div className="bg-surface-container-lowest p-5 sm:p-10 md:p-16 rounded-3xl hairline-border relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-pulsar-red/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="bg-surface-container-lowest p-6 sm:p-10 md:p-16 rounded-3xl hairline-border relative overflow-hidden">
+              {/* Animated Background Glow - positioned logically */}
+              <div className={`absolute top-0 ${isRtl ? 'left-0 -translate-x-1/2' : 'right-0 translate-x-1/2'} w-64 h-64 bg-pulsar-red/5 blur-[100px] rounded-full -translate-y-1/2`}></div>
               
               <AnimatePresence mode="wait">
                 {formSubmitted ? (
@@ -115,7 +121,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    className="text-center py-8 md:py-20"
+                    className="text-center py-8 md:py-12"
                   >
                     <div className="w-16 h-16 md:w-24 md:h-24 bg-pulsar-red/10 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-10">
                       <ShieldCheck className="text-pulsar-red" size={32} />
@@ -141,7 +147,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                     className="space-y-6 md:space-y-10 relative z-10"
                     onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}
                   >
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-10">
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-10">
                       <div className="space-y-2 md:space-y-4">
                         <label className="font-mono text-[10px] text-on-surface-variant/50 uppercase tracking-[0.3em] px-2 block">
                           {t.contact.form.name}
@@ -172,7 +178,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                       </label>
                       <textarea 
                         required
-                        rows={isRtl ? 4 : 5}
+                        rows={5}
                         placeholder={t.contact.form.detailsPlaceholder}
                         className="w-full bg-surface-container-low border border-outline-variant/10 rounded-xl px-4 md:px-6 py-3.5 md:py-5 focus:border-pulsar-red focus:bg-white outline-none transition-all font-headline font-medium text-on-surface placeholder:text-on-surface-variant/30 resize-none"
                       />
@@ -184,13 +190,13 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                     >
                       <div className="absolute inset-0 bg-pulsar-red translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                       <span className="relative z-10">{t.contact.form.submit}</span>
-                      <Send className="relative z-10 group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform" size={20} />
+                      <Send className={`relative z-10 transition-transform ${isRtl ? 'group-hover:-translate-x-2' : 'group-hover:translate-x-2'} group-hover:-translate-y-1`} size={20} />
                     </button>
 
                     <div className="flex items-center justify-center gap-4 opacity-30">
-                      <div className="h-[1px] w-8 bg-on-surface"></div>
-                      <span className="font-mono text-[9px] uppercase tracking-[0.4em]">Secure_Transmission_Active</span>
-                      <div className="h-[1px] w-8 bg-on-surface"></div>
+                      <div className="h-[1px] flex-1 max-w-[40px] bg-on-surface"></div>
+                      <span className="font-mono text-[9px] uppercase tracking-[0.4em] whitespace-nowrap text-center">Secure_Transmission_Active</span>
+                      <div className="h-[1px] flex-1 max-w-[40px] bg-on-surface"></div>
                     </div>
                   </motion.form>
                 )}
