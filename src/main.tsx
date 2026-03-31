@@ -1,0 +1,17 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom"; // Add this
+import App from "./App"; // Standard import without explicit extension
+import "./index.css";
+
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  createRoot(rootElement).render(
+    <React.StrictMode>
+      <BrowserRouter> 
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+}
