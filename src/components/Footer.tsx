@@ -91,14 +91,14 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           <div className="flex items-center gap-4 bg-surface-container-low px-6 py-3 rounded-md border border-outline-variant/10 shadow-sm">
             <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)] animate-pulse" />
             <span className="label-sm text-on-surface-variant/40 uppercase tracking-widest">
-              {t.hero.status} // {t.footer.metadata.status}
+              {t.hero.status} // {(t.footer as any).metadata.status.split('//')[1]?.trim() || "Node_Benghazi_2.6"}
             </span>
           </div>
           
           <div className="flex items-center gap-8 opacity-30">
-            <span className="label-sm text-[9px] uppercase tracking-widest">{t.footer.copy}</span>
+            <span className="label-sm !text-[9px] uppercase tracking-widest">{t.footer.copy.split('//')[0]}</span>
             <div className="h-4 w-px bg-outline-variant/20" />
-            <span className="label-sm text-[9px] uppercase tracking-widest">{t.footer.metadata.ledger}</span>
+            <span className="label-sm !text-[9px] uppercase tracking-widest">{(t.footer as any).metadata.ledger}</span>
           </div>
         </div>
       </div>
