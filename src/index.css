@@ -64,17 +64,17 @@
   
   .display-lg { 
     @apply font-display font-extrabold tracking-[-0.02em] leading-[1.1];
-    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
   }
 
   .display-md { 
     @apply font-display font-bold tracking-[-0.02em] leading-[1.1];
-    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-size: clamp(1.9rem, 6vw, 3.2rem);
   }
 
   .display-sm {
-    @apply font-display font-bold tracking-[-0.02em] leading-[1.1];
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    @apply font-display font-bold tracking-[-0.02em] leading-[1.15];
+    font-size: clamp(1.25rem, 4vw, 2rem);
   }
 
   /* Headlines - Manrope, -0.02em tracking */
