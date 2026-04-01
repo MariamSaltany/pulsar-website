@@ -13,13 +13,13 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
   const isRtl = lang === 'ar';
 
   return (
-    <footer className={`relative bg-surface pt-32 pb-16 border-t border-outline-variant/10 overflow-hidden ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <footer className={`relative bg-surface pt-24 lg:pt-32 pb-16 border-t border-outline-variant/10 overflow-hidden ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Subtle Background Accents */}
       <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50" />
       <div className="absolute top-0 left-0 w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full pointer-events-none opacity-30" />
       
       <div className="container-standard relative z-10">
-        <div className="grid lg:grid-cols-2 xl:grid-cols-12 gap-16 lg:gap-20 xl:gap-32 pb-24 border-b border-outline-variant/10">
+        <div className="grid gap-16 lg:grid-cols-2 xl:grid-cols-[1.35fr_1fr] xl:gap-28 pb-24 border-b border-outline-variant/10">
           
           {/* Brand Identity Column */}
           <div className="xl:col-span-5 space-y-10">
@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           </div>
 
           {/* Links and Navigation */}
-          <div className="xl:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12">
+          <div className="xl:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12">
             {/* Navigation Column */}
             <div className="space-y-6 sm:space-y-8">
               <span className="label-sm text-primary/60 uppercase tracking-widest">{(t.footer as any).headers.navigation}</span>
@@ -76,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
             </div>
 
             {/* Client Portal */}
-            <div className="col-span-2 md:col-span-1 space-y-6 sm:space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <span className="label-sm text-primary/60 uppercase tracking-widest">{(t.footer as any).headers.uplink}</span>
               <a href="#" className="btn-secondary w-full group !px-4 sm:!px-8">
                 <span className="truncate">{t.footer.links[2]}</span>
@@ -96,9 +96,9 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 opacity-30">
-            <span className="label-sm !text-[8px] sm:!text-[9px] uppercase tracking-widest text-center">{t.footer.copy.split('//')[0]}</span>
+            <span className="label-sm text-[8px] sm:!text-[9px] uppercase tracking-widest text-center">{t.footer.copy.split('//')[0]}</span>
             <div className="hidden sm:block h-4 w-px bg-outline-variant/20" />
-            <span className="label-sm !text-[8px] sm:!text-[9px] uppercase tracking-widest text-center">{(t.footer as any).metadata.ledger}</span>
+            <span className="label-sm text-[8px] sm:!text-[9px] uppercase tracking-widest text-center">{(t.footer as any).metadata.ledger}</span>
           </div>
         </div>
       </div>

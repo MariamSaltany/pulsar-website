@@ -3,13 +3,15 @@ import { motion } from 'motion/react';
 import { PartnerLogoSVG } from './PartnerLogo';
 import { translations } from '../translations';
 
+const motionEase = [0.22, 1, 0.36, 1] as const;
+
 const PartnerCard = ({ partner, index, lang }: { partner: any, index: number, lang: 'en' | 'ar' }) => {
   const t = translations[lang];
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ delay: index * 0.1, duration: 0.8, ease: motionEase }}
       viewport={{ once: true }}
       className="group relative h-full"
     >
@@ -54,13 +56,13 @@ export const PartnerSection = ({ lang }: { lang: 'en' | 'ar' }) => {
   const partners = t.alliances.list;
 
   return (
-    <section id="partners" className="py-24 px-6 relative overflow-hidden bg-surface">
+    <section id="partners" className="py-24 section-inner relative overflow-hidden bg-surface">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1, ease: motionEase }}
           className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-surface-container-low border border-outline-variant/10 rounded-md mb-6 shadow-sm">

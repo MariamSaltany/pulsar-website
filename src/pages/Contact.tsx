@@ -14,14 +14,14 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
 
   return (
     <div 
-      className={`min-h-screen bg-surface-container-low pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden relative ${isRtl ? 'font-arabic' : 'font-sans'}`} 
+      className={`min-h-screen bg-surface-container-low pt-24 md:pt-32 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 overflow-hidden relative ${isRtl ? 'font-arabic' : 'font-sans'}`} 
       dir={isRtl ? 'rtl' : 'ltr'}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none"></div>
       
       <div className="max-w-screen-2xl mx-auto relative z-10">
-        <header className="mb-10 md:mb-24 text-center lg:text-start">
+        <header className={`mb-10 md:mb-24 ${isRtl ? 'text-right lg:text-end' : 'text-center lg:text-start'}`}>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,13 +35,15 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-headline font-extrabold text-4xl sm:text-6xl md:text-8xl tracking-tighter text-on-surface mb-6 md:mb-8 leading-[0.9]"
+            className={`font-headline font-extrabold text-4xl sm:text-6xl md:text-8xl tracking-tighter text-on-surface mb-6 md:mb-8 leading-[0.9] ${isRtl ? 'text-right' : ''}`}
           >
-            {t.contact.title.split(' ').map((word: string, i: number) => (
-              <React.Fragment key={i}>
-                {i === 1 ? <span className="text-pulsar-red">{word} </span> : word + ' '}
-              </React.Fragment>
-            ))}
+            {isRtl ? t.contact.title : (
+              t.contact.title.split(' ').map((word: string, i: number) => (
+                <React.Fragment key={i}>
+                  {i === 1 ? <span className="text-pulsar-red">{word} </span> : word + ' '}
+                </React.Fragment>
+              ))
+            )}
           </motion.h1>
           
           <motion.p 

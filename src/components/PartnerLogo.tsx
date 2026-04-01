@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+const motionEase = [0.22, 1, 0.36, 1] as const;
+
 // Import logos to let Vite handle the URL resolution
 import fortinetLogo from '../logos.tsx/Fortinet-logo-rgb-black-red.svg';
 import exabeamLogo from '../logos.tsx/Exabeam-2024-Logo-Color-Dark-02.svg';
@@ -56,7 +58,7 @@ const PartnerLogo: React.FC<PartnerLogoProps> = ({ name, role, index = 0 }) => {
     <motion.article 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ delay: index * 0.1, duration: 0.8, ease: motionEase }}
       className="relative aspect-video bg-surface-container-low border border-outline-variant/10 flex flex-col items-center justify-center p-6 overflow-hidden group hover:shadow-ambient rounded-md transition-all duration-500"
     >
       <div className="absolute inset-0 opacity-[0.02] pulsar-grid-light" />

@@ -44,9 +44,9 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
               transition={{ duration: 0.8 }}
               className={`font-headline font-extrabold text-2xl xs:text-3xl sm:text-6xl lg:text-[110px] headline-tight text-on-surface mb-6 md:mb-10 break-words ${isRtl ? 'text-right' : 'text-left'}`}
             >
-              {t.services.heroTitle.split(' ').map((word: string, i: number) => (
+              {(t.services.heroTitleLines || [t.services.heroTitle]).map((line: string, i: number, arr: string[]) => (
                 <React.Fragment key={i}>
-                  {word}{i === 0 && <br/>}
+                  <div className={`${isRtl ? 'text-right leading-[1.1]' : ''} ${i < arr.length - 1 ? 'mb-4' : ''}`}>{line}</div>
                 </React.Fragment>
               ))}
             </motion.h1>

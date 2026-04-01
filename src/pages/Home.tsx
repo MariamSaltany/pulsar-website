@@ -13,6 +13,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
   const t = translations[lang];
   const isRtl = lang === 'ar';
   const containerRef = useRef(null);
+  const defaultEase = [0.22, 1, 0.36, 1] as const;
   
   const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -28,7 +29,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
           <motion.div 
             initial={{ opacity: 0, x: isRtl ? 30 : -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: defaultEase }}
             className="flex flex-col justify-center space-y-10"
           >
             <div className="space-y-6">
@@ -80,7 +81,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1, ease: defaultEase }}
             className="relative flex items-center justify-center lg:h-[700px]"
           >
             <div className="relative w-full aspect-square max-w-[500px] sm:max-w-[420px] mx-auto lg:mx-0 lg:-translate-x-12">
@@ -173,7 +174,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
       </div>
 
       {/* 3.5 QUOTE: THE STRATEGIC MANDATE */}
-      <section className="py-24 px-4 sm:px-8 bg-surface-container-low border-y border-outline-variant/10">
+      <section className="py-24 section-inner bg-surface-container-low border-y border-outline-variant/10">
         <div className="max-w-screen-xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -222,7 +223,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: defaultEase }}
           className="container-standard text-center"
         >
           <div className="space-y-8">
