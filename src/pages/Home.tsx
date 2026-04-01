@@ -23,7 +23,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
       
       {/* 1. HERO: THE SYSTEM CORE */}
       <section className="relative min-h-screen flex items-center overflow-hidden pulsar-grid-light">
-        <div className="container-standard grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 py-32">
+        <div className="container-standard grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 py-20 md:py-24 lg:py-32">
           {/* Hero Content */}
           <motion.div 
             initial={{ opacity: 0, x: isRtl ? 30 : -30 }}
@@ -36,7 +36,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-sm label-sm text-primary border-l-2 border-primary"
+                className={`inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-sm label-sm text-primary ${isRtl ? 'border-r-2' : 'border-l-2'} border-primary`}
               >
                 <ShieldCheck size={14} fill="currentColor" />
                 {t.hero.tag}
@@ -83,7 +83,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex items-center justify-center lg:h-[700px]"
           >
-            <div className="relative w-full aspect-square max-w-[500px] lg:-translate-x-12">
+            <div className="relative w-full aspect-square max-w-[500px] sm:max-w-[420px] mx-auto lg:mx-0 lg:-translate-x-12">
               {/* Layered Glass Cards */}
               <div className="absolute inset-0 airy-card p-6 flex flex-col justify-between animate-swap-back">
                 <div className="flex justify-between items-start mb-4">
@@ -173,7 +173,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
       </div>
 
       {/* 3.5 QUOTE: THE STRATEGIC MANDATE */}
-      <section className="py-40 px-8 bg-surface-container-low border-y border-outline-variant/10">
+      <section className="py-24 px-4 sm:px-8 bg-surface-container-low border-y border-outline-variant/10">
         <div className="max-w-screen-xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -190,15 +190,15 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             transition={{ delay: 0.2 }}
             className="font-headline text-4xl md:text-6xl font-extralight tracking-tight text-on-surface max-w-5xl mx-auto leading-[1.15] mb-12"
           >
-            {isRtl ? (
-              <>
-                "النمو بدون أمان هو <span className="text-primary font-bold italic">مخاطرة</span>. والأمان بدون نمو هو <span className="text-primary font-bold italic">ركود</span>. نحن نقدم التوازن."
-              </>
-            ) : (
-              <>
-                "Growth without security is a <span className="text-primary font-bold italic">liability</span>. Security without growth is <span className="text-primary font-bold italic">stagnation</span>. We deliver the balance."
-              </>
-            )}
+            {t.hero.quote.segments.map((segment: any, i: number) => (
+              <React.Fragment key={i}>
+                {segment.highlight ? (
+                  <span className="text-primary font-bold italic">{segment.text}</span>
+                ) : (
+                  segment.text
+                )}
+              </React.Fragment>
+            ))}
           </motion.blockquote>
           <motion.div 
             initial={{ opacity: 0 }}
@@ -209,7 +209,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
           >
             <div className="h-[0.5px] w-16 bg-primary opacity-30"></div>
             <span className="font-mono text-xs tracking-[0.4em] text-on-surface-variant uppercase font-semibold">
-              {isRtl ? "تفويض بلسار الاستراتيجي" : "Pulsar Strategic Mandate"}
+              {t.hero.quote.author}
             </span>
             <div className="h-[0.5px] w-16 bg-primary opacity-30"></div>
           </motion.div>
@@ -217,7 +217,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
       </section>
 
       {/* 4. CALL TO ACTION: THE UPGRADE PROTOCOL */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 sm:py-24 relative overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

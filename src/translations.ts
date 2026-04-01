@@ -22,7 +22,18 @@ export const translations = {
       "ariaConnect": "Connect with our technical architects",
       "viewCaseFiles": "View Our Services",
       "ariaServices": "View our cybersecurity and digital transformation services",
-      "status": "BENGHAZI_01 // ACTIVE"
+      "status": "BENGHAZI_01 // ACTIVE",
+      "quote": {
+        "text": "\"Growth without security is a liability. Security without growth is stagnation. We deliver the balance.\"",
+        "segments": [
+          { "text": "\"Growth without security is a ", "highlight": false },
+          { "text": "liability", "highlight": true },
+          { "text": ". Security without growth is ", "highlight": false },
+          { "text": "stagnation", "highlight": true },
+          { "text": ". We deliver the balance.\"", "highlight": false }
+        ],
+        "author": "Pulsar Strategic Mandate"
+      }
     },
     "about": {
       "tag": "Identity & Vision",
@@ -76,6 +87,7 @@ export const translations = {
   "services": {
     "tag": "Technical Capabilities",
     "heroTitle": "Strategic Solutions.",
+    "heroTitleLines": ["Strategic", "Solutions."],
     "heroDesc": "Architecting digital resilience through aggressive cybersecurity and sovereign digital transformation.",
     "cybersecurity": {
       "title": "Cybersecurity Ops",
@@ -177,6 +189,13 @@ export const translations = {
     "cta": "SEND MESSAGE",
     "quote": {
       "text": "\"Growth without security is a liability. Security without growth is stagnation. We deliver the balance.\"",
+      "segments": [
+        { "text": "\"Growth without security is a ", "highlight": false },
+        { "text": "liability", "highlight": true },
+        { "text": ". Security without growth is ", "highlight": false },
+        { "text": "stagnation", "highlight": true },
+        { "text": ". We deliver the balance.\"", "highlight": false }
+      ],
       "author": "Pulsar Strategic Mandate"
     }
   },
@@ -280,7 +299,18 @@ export const translations = {
       "ariaConnect": "تواصل مع مهندسينا المعماريين",
       "viewCaseFiles": "عرض خدماتنا",
       "ariaServices": "عرض خدمات الأمن السيبراني والتحول الرقمي لدينا",
-      "status": "بنغازي_01 // نشط"
+      "status": "بنغازي_01 // نشط",
+      "quote": {
+        "text": "\"النمو بدون أمن هو مسؤولية قانونية. الأمن بدون نمو هو ركود. نحن نقدم التوازن.\"",
+        "segments": [
+          { "text": "\"النمو بدون أمن هو ", "highlight": false },
+          { "text": "مسؤولية", "highlight": true },
+          { "text": " قانونية. الأمن بدون نمو هو ", "highlight": false },
+          { "text": "ركود", "highlight": true },
+          { "text": ". نحن نقدم التوازن.\"", "highlight": false }
+        ],
+        "author": "تفويض بلسار الاستراتيجي"
+      }
     },
     "about": {
       "tag": "الهوية والرؤية",
@@ -334,6 +364,7 @@ export const translations = {
     "services": {
       "tag": "القدرات التقنية",
       "heroTitle": "حلول استراتيجية.",
+      "heroTitleLines": ["حلول", "استراتيجية."],
       "heroDesc": "هندسة الصمود الرقمي من خلال الأمن السيبراني الهجومي والتحول الرقمي السيادي.",
       "cybersecurity": {
         "title": "عمليات الأمن السيبراني",
@@ -435,6 +466,13 @@ export const translations = {
       "cta": "إرسال رسالة",
       "quote": {
         "text": "\"النمو بدون أمن هو مسؤولية قانونية. الأمن بدون نمو هو ركود. نحن نقدم التوازن.\"",
+        "segments": [
+          { "text": "\"النمو بدون أمن هو ", "highlight": false },
+          { "text": "مسؤولية", "highlight": true },
+          { "text": " قانونية. الأمن بدون نمو هو ", "highlight": false },
+          { "text": "ركود", "highlight": true },
+          { "text": ". نحن نقدم التوازن.\"", "highlight": false }
+        ],
         "author": "تفويض بلسار الاستراتيجي"
       }
     },

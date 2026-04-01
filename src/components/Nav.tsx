@@ -102,7 +102,7 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
             <motion.aside 
               initial={{ x: isRtl ? '-100%' : '100%' }} animate={{ x: 0 }} exit={{ x: isRtl ? '-100%' : '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className={`fixed ${isRtl ? 'left-0' : 'right-0'} top-0 h-full w-[300px] bg-surface-container-lowest z-[70] p-10 flex flex-col shadow-ambient`}
+              className={`fixed ${isRtl ? 'left-0' : 'right-0'} top-0 h-full w-[80vw] max-w-[300px] bg-surface-container-lowest z-[70] p-6 sm:p-10 flex flex-col shadow-ambient`}
             >
               <div className="flex justify-between items-center mb-16">
                 <Logo className="h-10" />
@@ -117,7 +117,7 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
                     to={item.path} 
                     onClick={() => setMobileMenuOpen(false)} 
                     className={`block headline-md transition-all duration-300 ${
-                      location.pathname === item.path ? 'text-primary translate-x-2' : 'text-on-surface-variant/60 hover:text-primary hover:translate-x-1'
+                      location.pathname === item.path ? `text-primary ${isRtl ? '-translate-x-2' : 'translate-x-2'}` : `text-on-surface-variant/60 hover:text-primary ${isRtl ? 'hover:-translate-x-1' : 'hover:translate-x-1'}`
                     }`}
                   >
                     {item.label}

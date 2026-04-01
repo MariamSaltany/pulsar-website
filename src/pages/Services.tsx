@@ -27,8 +27,8 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
     <div className={`bg-surface text-on-surface selection:bg-pulsar-red/30 selection:text-pulsar-red min-h-screen dot-grid pt-32 pb-32 ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
       {/* Hero Section */}
-      <section className="max-w-screen-2xl mx-auto px-8 lg:px-12 pt-24 pb-40">
-        <div className="grid grid-cols-12 gap-12">
+      <section className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 pt-20 md:pt-24 pb-32 md:pb-36">
+        <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 lg:col-span-8">
             <motion.div 
               initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
@@ -42,11 +42,11 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className={`font-headline font-extrabold text-6xl lg:text-[110px] headline-tight text-on-surface mb-10 ${isRtl ? 'text-right' : 'text-left'}`}
+              className={`font-headline font-extrabold text-5xl md:text-6xl lg:text-[88px] headline-tight text-on-surface mb-10 max-w-xl ${isRtl ? 'text-right' : 'text-left'}`}
             >
-              {t.services.heroTitle.split(' ').map((word: string, i: number) => (
+              {(t.services.heroTitleLines || [t.services.heroTitle]).map((line: string, i: number) => (
                 <React.Fragment key={i}>
-                  {word}{i === 0 && <br/>}
+                  {line}{i < (t.services.heroTitleLines || [t.services.heroTitle]).length - 1 && <br />}
                 </React.Fragment>
               ))}
             </motion.h1>
@@ -104,7 +104,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Division 01: Cybersecurity Ops */}
-      <section className="max-w-screen-2xl mx-auto px-8 lg:px-12 py-32 border-t border-outline-variant/10">
+      <section className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 py-24 md:py-28 border-t border-outline-variant/10">
         <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
           <div className="max-w-3xl">
             <div className="font-mono text-[10px] tracking-[0.3em] text-on-surface-variant/50 font-bold mb-4 uppercase">
@@ -147,7 +147,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Division 02: Digital Transformation */}
-      <section className="max-w-screen-2xl mx-auto px-8 lg:px-12 py-32">
+      <section className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 py-24 md:py-28">
         <div className="flex items-center gap-8 mb-20">
           <div className="font-mono text-[10px] tracking-[0.4em] text-on-surface-variant/50 font-bold uppercase whitespace-nowrap">
             TRANSFORMATION_V2 // OPTIMAL
@@ -208,18 +208,18 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Quote Section */}
-      <section className="py-40 px-8 bg-surface-container-low border-y border-outline-variant/10">
+      <section className="py-24 px-4 sm:px-8 bg-surface-container-low border-y border-outline-variant/10">
         <div className="max-w-screen-xl mx-auto text-center">
           <div className="inline-block relative mb-12">
             <Quote className="text-pulsar-red opacity-20" size={64} fill="currentColor" />
           </div>
           <blockquote className="font-headline text-4xl md:text-6xl font-extralight tracking-tight text-on-surface max-w-5xl mx-auto leading-[1.15] mb-12">
-            {t.services.quote.text.split(' ').map((word: string, i: number) => (
+            {t.services.quote.segments.map((segment: any, i: number) => (
               <React.Fragment key={i}>
-                {word === 'liability' || word === 'stagnation' || word === 'مسؤولية' || word === 'ركود' ? (
-                  <span className="text-pulsar-red font-bold italic">{word} </span>
+                {segment.highlight ? (
+                  <span className="text-pulsar-red font-bold italic">{segment.text}</span>
                 ) : (
-                  word + ' '
+                  segment.text
                 )}
               </React.Fragment>
             ))}
@@ -233,7 +233,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-48 px-8 text-center bg-surface">
+      <section className="py-32 md:py-40 px-6 sm:px-8 text-center bg-surface">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
