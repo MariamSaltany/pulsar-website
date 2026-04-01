@@ -24,29 +24,29 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
   const isRtl = lang === 'ar';
 
   return (
-    <div className={`bg-surface text-on-surface selection:bg-pulsar-red/30 selection:text-pulsar-red min-h-screen dot-grid pt-32 pb-32 ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`bg-surface text-on-surface selection:bg-pulsar-red/30 selection:text-pulsar-red min-h-screen dot-grid pt-24 md:pt-32 pb-16 md:pb-32 overflow-x-hidden ${isRtl ? 'font-arabic' : 'font-sans'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
       {/* Hero Section */}
-      <section className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 pt-20 md:pt-24 pb-32 md:pb-36">
-        <div className="grid grid-cols-12 gap-10">
+      <section className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-12 md:pt-24 pb-20 md:pb-40 overflow-hidden">
+        <div className="grid grid-cols-12 gap-8 lg:gap-12">
           <div className="col-span-12 lg:col-span-8">
             <motion.div 
               initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="font-mono text-[10px] tracking-[0.3em] text-primary font-bold mb-8 flex items-center gap-4"
+              className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-primary font-bold mb-6 md:mb-8 flex items-center gap-4 flex-wrap"
             >
-              <span className="w-10 h-[1px] bg-primary/30"></span>
+              <span className="w-10 h-[1px] bg-primary/30 hidden sm:block"></span>
               PROTOCOL_V4 // SYSTEM_ACTIVE
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className={`font-headline font-extrabold text-5xl md:text-6xl lg:text-[88px] headline-tight text-on-surface mb-10 max-w-xl ${isRtl ? 'text-right' : 'text-left'}`}
+              className={`font-headline font-extrabold text-2xl xs:text-3xl sm:text-6xl lg:text-[110px] headline-tight text-on-surface mb-6 md:mb-10 break-words ${isRtl ? 'text-right' : 'text-left'}`}
             >
-              {(t.services.heroTitleLines || [t.services.heroTitle]).map((line: string, i: number) => (
+              {t.services.heroTitle.split(' ').map((word: string, i: number) => (
                 <React.Fragment key={i}>
-                  {line}{i < (t.services.heroTitleLines || [t.services.heroTitle]).length - 1 && <br />}
+                  {word}{i === 0 && <br/>}
                 </React.Fragment>
               ))}
             </motion.h1>
@@ -104,21 +104,21 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Division 01: Cybersecurity Ops */}
-      <section className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 py-24 md:py-28 border-t border-outline-variant/10">
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
+      <section className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-32 border-t border-outline-variant/10">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-12 md:mb-24 gap-8 md:gap-12">
           <div className="max-w-3xl">
-            <div className="font-mono text-[10px] tracking-[0.3em] text-on-surface-variant/50 font-bold mb-4 uppercase">
+            <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-on-surface-variant/50 font-bold mb-4 uppercase">
               {isRtl ? 'القسم_01' : 'DIVISION_01'}
             </div>
-            <h2 className="font-headline font-extrabold text-5xl text-on-surface tracking-tighter mb-6">{t.services.cybersecurity.title}</h2>
-            <p className="text-on-surface-variant text-lg font-light leading-relaxed">{t.services.cybersecurity.desc}</p>
+            <h2 className="font-headline font-extrabold text-2xl sm:text-3xl md:text-5xl text-on-surface tracking-tighter mb-6">{t.services.cybersecurity.title}</h2>
+            <p className="text-on-surface-variant text-base md:text-lg font-light leading-relaxed">{t.services.cybersecurity.desc}</p>
           </div>
-          <div className="font-mono text-[10px] tracking-widest text-on-surface-variant/60 border border-outline-variant/10 px-6 py-3 rounded-full bg-surface-container-lowest shadow-sm">
+          <div className="font-mono text-[10px] tracking-widest text-on-surface-variant/60 border border-outline-variant/10 px-6 py-3 rounded-full bg-surface-container-lowest shadow-sm hidden sm:block">
             SEC_AUTH // LEVEL_5_CLEARANCE
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {t.services.cybersecurity.categories.map((category: any, idx: number) => (
             <motion.div 
               key={idx}
@@ -126,7 +126,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-surface-container-lowest p-12 hairline-border rounded-xl card-hover group"
+              className="bg-surface-container-lowest p-8 md:p-12 hairline-border rounded-xl card-hover group"
             >
               <div className="font-mono text-[9px] text-primary font-bold mb-8 tracking-[0.2em]">
                 UNIT_01{String.fromCharCode(65 + idx)}
@@ -147,27 +147,27 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Division 02: Digital Transformation */}
-      <section className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 py-24 md:py-28">
-        <div className="flex items-center gap-8 mb-20">
-          <div className="font-mono text-[10px] tracking-[0.4em] text-on-surface-variant/50 font-bold uppercase whitespace-nowrap">
+      <section className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-32 overflow-hidden">
+        <div className="flex items-center gap-4 md:gap-8 mb-12 md:mb-20">
+          <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.4em] text-on-surface-variant/50 font-bold uppercase whitespace-normal sm:whitespace-nowrap">
             TRANSFORMATION_V2 // OPTIMAL
           </div>
           <div className="h-[1px] flex-grow bg-outline-variant/10"></div>
         </div>
 
-        <div className="grid grid-cols-12 gap-16">
+        <div className="grid grid-cols-12 gap-8 lg:gap-16">
           <div className="col-span-12 lg:col-span-4">
-            <div className="font-mono text-[10px] tracking-[0.3em] text-on-surface-variant/50 font-bold mb-4 uppercase">
+            <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-on-surface-variant/50 font-bold mb-4 uppercase">
               {isRtl ? 'القسم_02' : 'DIVISION_02'}
             </div>
-            <h2 className="font-headline font-extrabold text-5xl text-on-surface tracking-tighter mb-8 leading-[1.1]">
+            <h2 className="font-headline font-extrabold text-2xl sm:text-3xl md:text-5xl text-on-surface tracking-tighter mb-6 md:mb-8 leading-[1.1] break-words">
               {t.services.transformation.title}
             </h2>
-            <p className="text-on-surface-variant text-lg leading-relaxed font-light mb-12">
+            <p className="text-on-surface-variant text-base md:text-lg leading-relaxed font-light mb-8 md:mb-12">
               {t.services.transformation.desc}
             </p>
             
-            <div className="bg-surface-container-low p-8 rounded-xl border border-primary/10 relative overflow-hidden group">
+            <div className="bg-surface-container-low p-6 md:p-8 rounded-xl border border-primary/10 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <GitBranch size={40} className="text-primary" />
               </div>
@@ -208,49 +208,49 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       </section>
 
       {/* Quote Section */}
-      <section className="py-24 px-4 sm:px-8 bg-surface-container-low border-y border-outline-variant/10">
+      <section className="py-20 md:py-40 px-4 sm:px-6 md:px-8 bg-surface-container-low border-y border-outline-variant/10">
         <div className="max-w-screen-xl mx-auto text-center">
-          <div className="inline-block relative mb-12">
-            <Quote className="text-pulsar-red opacity-20" size={64} fill="currentColor" />
+          <div className="inline-block relative mb-8 md:mb-12">
+            <Quote className="text-pulsar-red opacity-20 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16" fill="currentColor" />
           </div>
-          <blockquote className="font-headline text-4xl md:text-6xl font-extralight tracking-tight text-on-surface max-w-5xl mx-auto leading-[1.15] mb-12">
-            {t.services.quote.segments.map((segment: any, i: number) => (
+          <blockquote className="font-headline text-xl sm:text-4xl md:text-6xl font-extralight tracking-tight text-on-surface max-w-5xl mx-auto leading-[1.15] mb-8 md:mb-12">
+            {t.services.quote.text.split(' ').map((word: string, i: number) => (
               <React.Fragment key={i}>
-                {segment.highlight ? (
-                  <span className="text-pulsar-red font-bold italic">{segment.text}</span>
+                {word === 'liability' || word === 'stagnation' || word === 'مسؤولية' || word === 'ركود' ? (
+                  <span className="text-pulsar-red font-bold italic">{word} </span>
                 ) : (
-                  segment.text
+                  word + ' '
                 )}
               </React.Fragment>
             ))}
           </blockquote>
-          <div className="flex justify-center items-center gap-6">
-            <div className="h-[0.5px] w-16 bg-pulsar-red opacity-30"></div>
-            <span className="font-mono text-xs tracking-[0.4em] text-on-surface-variant uppercase font-semibold">{t.services.quote.author}</span>
-            <div className="h-[0.5px] w-16 bg-pulsar-red opacity-30"></div>
+          <div className="flex justify-center items-center gap-4 md:gap-6">
+            <div className="h-[0.5px] w-12 md:w-16 bg-pulsar-red opacity-30"></div>
+            <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] text-on-surface-variant uppercase font-semibold">{t.services.quote.author}</span>
+            <div className="h-[0.5px] w-12 md:w-16 bg-pulsar-red opacity-30"></div>
           </div>
         </div>
       </section>
 
       {/* Footer CTA */}
-      <section className="py-32 md:py-40 px-6 sm:px-8 text-center bg-surface">
+      <section className="py-24 md:py-48 px-4 sm:px-6 md:px-8 text-center bg-surface">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-4 px-6 py-3 bg-pulsar-red/5 border border-pulsar-red/10 rounded-full mb-12">
+          <div className="inline-flex items-center gap-4 px-6 py-3 bg-pulsar-red/5 border border-pulsar-red/10 rounded-full mb-8 md:mb-12">
             <div className="w-2 h-2 bg-pulsar-red animate-pulse rounded-full"></div>
-            <span className="font-mono text-[10px] text-pulsar-red font-bold uppercase tracking-[0.3em]">{t.services.finalHandshake}</span>
+            <span className="font-mono text-[9px] sm:text-[10px] text-pulsar-red font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em]">{t.services.finalHandshake}</span>
           </div>
-          <h2 className="font-headline text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-16 leading-[0.9]">
+          <h2 className="font-headline text-2xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-10 md:mb-16 leading-[0.9] break-words">
             {t.services.initiateUpgrade}
           </h2>
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-6 md:gap-8">
             <Link 
               to="/contact" 
-              className="group relative inline-flex items-center gap-6 px-12 py-6 bg-on-surface text-surface rounded-full font-headline font-bold text-xl overflow-hidden transition-all hover:scale-105 active:scale-95"
+              className="group relative inline-flex items-center gap-4 md:gap-6 px-8 md:px-12 py-4 md:py-6 bg-on-surface text-surface rounded-full font-headline font-bold text-lg md:text-xl overflow-hidden transition-all hover:scale-105 active:scale-95"
             >
               <div className="absolute inset-0 bg-pulsar-red translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
               <span className="relative z-10">{t.services.cta}</span>
