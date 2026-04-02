@@ -42,7 +42,7 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
                   {item.label}
                 </span>
                 {location.pathname === item.path && (
-                  <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-[2px] bg-primary" />
+                  <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary" />
                 )}
               </Link>
             ))}
@@ -97,12 +97,12 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
             <motion.div 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-on-surface/20 backdrop-blur-md z-[60]"
+              className="fixed inset-0 bg-on-surface/20 backdrop-blur-md z-60"
             />
             <motion.aside 
               initial={{ x: isRtl ? '-100%' : '100%' }} animate={{ x: 0 }} exit={{ x: isRtl ? '-100%' : '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className={`fixed ${isRtl ? 'left-0' : 'right-0'} top-0 h-full w-[80vw] max-w-[300px] bg-surface-container-lowest z-[70] p-6 sm:p-10 flex flex-col shadow-ambient`}
+              className={`fixed ${isRtl ? 'left-0' : 'right-0'} top-0 h-full w-[80vw] max-w-75 bg-surface-container-lowest z-70 p-6 sm:p-10 flex flex-col shadow-ambient`}
             >
               <div className="flex justify-between items-center mb-16">
                 <Logo className="h-10" />
@@ -110,7 +110,7 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
                   <X size={24} />
                 </button>
               </div>
-              <nav className="space-y-6 flex-grow">
+              <nav className="space-y-6 grow">
                 {navItems.map((item) => (
                   <Link 
                     key={item.path} 

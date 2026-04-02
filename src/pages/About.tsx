@@ -35,7 +35,7 @@ const About: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             className="w-full lg:w-1/2 order-2 lg:order-1"
           >
             <div className={`flex items-center gap-4 mb-6 lg:mb-10 ${isRtl ? 'flex-row-reverse' : ''}`}>
-              <span className="h-[1px] w-8 lg:w-12 bg-pulsar-red"></span>
+              <span className="h-px w-8 lg:w-12 bg-pulsar-red"></span>
               <span className="text-xs lg:label-md text-pulsar-red font-bold tracking-[0.3em] lg:tracking-[0.5em] uppercase">
                 {t.about.tag}
               </span>
@@ -59,12 +59,12 @@ const About: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
                 <span className="text-[10px] uppercase tracking-wider opacity-50">{t.about.status.latency}</span>
                 <span className="text-lg font-mono font-medium">12ms</span>
               </div>
-              <div className="hidden md:block w-px h-10 bg-on-surface/[0.08]"></div>
+              <div className="hidden md:block w-px h-10 bg-on-surface/8"></div>
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-wider opacity-50">{t.about.status.encryption}</span>
                 <span className="text-lg font-mono font-medium">AES-256</span>
               </div>
-              <div className="hidden md:block w-px h-10 bg-on-surface/[0.08]"></div>
+              <div className="hidden md:block w-px h-10 bg-on-surface/8"></div>
               <div className="flex flex-col gap-1 col-span-2 md:col-span-1">
                 <span className="text-[10px] uppercase tracking-wider opacity-50">{t.about.status.identity}</span>
                 <span className="text-lg font-mono font-medium text-emerald-600 uppercase">{t.about.status.verified}</span>
@@ -81,7 +81,7 @@ const About: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             <div className="absolute -inset-4 bg-pulsar-red/5 rounded-[2.5rem] blur-3xl opacity-50 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
             <img 
               alt="Sovereign Core visualization" 
-              className="w-full h-auto max-w-[400px] lg:max-w-none mx-auto aspect-square object-contain relative z-10" 
+              className="w-full h-auto max-w-100 lg:max-w-none mx-auto aspect-square object-contain relative z-10" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH02FedypykNC83GQ_IpYiHvRh-OPbwRXu-XxQQTA_796sqfZWbnf4jkUFNTDbMWX8BX2R7rZ7cpa3EDDkIuOpydCQjC-B1k52HLpBGbey5zhAwhDSnFki3ZPmQKp70gXwTV_gLaXw_4vH516-gKC1WbMWufovDVwTNQdme8nH0KCu_KaAIxdCbw9bvwN2MqJv5OUEfvV1LZFfVsQwo4UXfKgLsvpMWfmOtJBuQa6RM2Is-vSaF5aUw7u5d1pq042oKNw1B5DL9EZT"
             />
           </motion.div>

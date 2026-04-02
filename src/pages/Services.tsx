@@ -35,14 +35,14 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
               animate={{ opacity: 1, x: 0 }}
               className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-primary font-bold mb-6 md:mb-8 flex items-center gap-4 flex-wrap"
             >
-              <span className="w-10 h-[1px] bg-primary/30 hidden sm:block"></span>
+              <span className="w-10 h-px bg-primary/30 hidden sm:block"></span>
               PROTOCOL_V4 // SYSTEM_ACTIVE
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className={`font-headline font-extrabold text-2xl xs:text-3xl sm:text-6xl lg:text-[110px] headline-tight text-on-surface mb-6 md:mb-10 break-words ${isRtl ? 'text-right' : 'text-left'}`}
+              className={`font-headline font-extrabold text-2xl xs:text-3xl sm:text-6xl lg:text-[110px] headline-tight text-on-surface mb-6 md:mb-10 wrap-break-word ${isRtl ? 'text-right' : 'text-left'}`}
             >
               {(t.services.heroTitleLines || [t.services.heroTitle]).map((line: string, i: number, arr: string[]) => (
                 <React.Fragment key={i}>
@@ -152,7 +152,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
           <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.4em] text-on-surface-variant/50 font-bold uppercase whitespace-normal sm:whitespace-nowrap">
             TRANSFORMATION_V2 // OPTIMAL
           </div>
-          <div className="h-[1px] flex-grow bg-outline-variant/10"></div>
+          <div className="h-px grow bg-outline-variant/10"></div>
         </div>
 
         <div className="grid grid-cols-12 gap-8 lg:gap-16">
@@ -160,7 +160,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
             <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-on-surface-variant/50 font-bold mb-4 uppercase">
               {isRtl ? 'القسم_02' : 'DIVISION_02'}
             </div>
-            <h2 className="font-headline font-extrabold text-2xl sm:text-3xl md:text-5xl text-on-surface tracking-tighter mb-6 md:mb-8 leading-[1.1] break-words">
+            <h2 className="font-headline font-extrabold text-2xl sm:text-3xl md:text-5xl text-on-surface tracking-tighter mb-6 md:mb-8 leading-[1.1] wrap-break-word">
               {t.services.transformation.title}
             </h2>
             <p className="text-on-surface-variant text-base md:text-lg leading-relaxed font-light mb-8 md:mb-12">
@@ -209,7 +209,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
 
       {/* Quote Section */}
       <section className="py-20 md:py-40 px-4 sm:px-6 md:px-8 bg-surface-container-low border-y border-outline-variant/10">
-        <div className="max-w-screen-xl mx-auto text-center">
+          <div className="max-w-7xl mx-auto text-center">
           <div className="inline-block relative mb-8 md:mb-12">
             <Quote className="text-pulsar-red opacity-20 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16" fill="currentColor" />
           </div>
@@ -244,7 +244,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
             <div className="w-2 h-2 bg-pulsar-red animate-pulse rounded-full"></div>
             <span className="font-mono text-[9px] sm:text-[10px] text-pulsar-red font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em]">{t.services.finalHandshake}</span>
           </div>
-          <h2 className="font-headline text-2xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-10 md:mb-16 leading-[0.9] break-words">
+          <h2 className="font-headline text-2xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-10 md:mb-16 leading-[0.9] wrap-break-word">
             {t.services.initiateUpgrade}
           </h2>
           <div className="flex flex-col items-center gap-6 md:gap-8">

@@ -67,7 +67,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6">
               {/* Email */}
               <div className="group flex items-start gap-4 md:gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-lowest hairline-border hover:bg-white transition-all duration-500">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
                   <Mail size={24} />
                 </div>
                 <div className="overflow-hidden">
@@ -78,7 +78,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
 
               {/* Location */}
               <div className="group flex items-start gap-4 md:gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-lowest hairline-border hover:bg-white transition-all duration-500">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-pulsar-red group-hover:scale-110 transition-transform duration-500">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -196,9 +196,9 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                     </button>
 
                     <div className="flex items-center justify-center gap-4 opacity-30">
-                      <div className="h-[1px] flex-1 max-w-[40px] bg-on-surface"></div>
+                      <div className="h-px flex-1 max-w-10 bg-on-surface"></div>
                       <span className="font-mono text-[9px] uppercase tracking-[0.4em] whitespace-nowrap text-center">Secure_Transmission_Active</span>
-                      <div className="h-[1px] flex-1 max-w-[40px] bg-on-surface"></div>
+                      <div className="h-px flex-1 max-w-10 bg-on-surface"></div>
                     </div>
                   </motion.form>
                 )}

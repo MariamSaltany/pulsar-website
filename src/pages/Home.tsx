@@ -82,9 +82,9 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: defaultEase }}
-            className="relative flex items-center justify-center lg:h-[700px]"
+            className="relative flex items-center justify-center lg:h-175"
           >
-            <div className="relative w-full aspect-square max-w-[500px] sm:max-w-[420px] mx-auto lg:mx-0 lg:-translate-x-12">
+            <div className="relative w-full aspect-square max-w-125 sm:max-w-105 mx-auto lg:mx-0 lg:-translate-x-12">
               {/* Layered Glass Cards */}
               <div className="absolute inset-0 airy-card p-6 flex flex-col justify-between animate-swap-back">
                 <div className="flex justify-between items-start mb-4">
@@ -101,7 +101,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5cBH4F-R2rfI_nN_2zufWmxcRtKxS4roLbM8INwWxDFwbCsANmcLy9ReBDIj0AqVBaf-aHofdNg3O-5uoSmm-3ALLbxSDZ-J03bhzGhAPUDbZjHoseCno0po8ZV1HDkOCb3dDsOgnUmCL_3x5TsoMr5wz_Fybaxjrkhtotvyh66tk_oNOdH15OpIG43fKhgAcwcBDsxD7VtOfRvCnBJu7EuSg_x1AJS4Z-8kJVVbbDiOI8ll1PQmUrvCMUgxorjQNOZ_rb5Ady9Le" 
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-surface/40 to-transparent"></div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
@@ -175,7 +175,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
 
       {/* 3.5 QUOTE: THE STRATEGIC MANDATE */}
       <section className="py-24 section-inner bg-surface-container-low border-y border-outline-variant/10">
-        <div className="max-w-screen-xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -236,7 +236,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             <div className="flex justify-center gap-6">
               <Link 
                 to="/contact" 
-                className="btn-primary px-12 py-5 !rounded-sm hover:scale-105 transition-all uppercase tracking-[0.2em] text-xs"
+                className="btn-primary px-12 py-5 rounded-sm! hover:scale-105 transition-all uppercase tracking-[0.2em] text-xs"
               >
                 {t.services.initiateUpgrade}
               </Link>

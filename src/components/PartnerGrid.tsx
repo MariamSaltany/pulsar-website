@@ -15,12 +15,12 @@ const PartnerCard = ({ partner, index, lang }: { partner: any, index: number, la
       viewport={{ once: true }}
       className="group relative h-full"
     >
-      <div className="airy-card !p-8 flex flex-col items-center h-full group">
+      <div className="airy-card p-8! flex flex-col items-center h-full group">
         {/* Ambient Glow: Subtle */}
         <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-primary/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors duration-700" />
 
         {/* Icon Container: Ultra Clean */}
-        <div className="mb-8 p-8 rounded-md bg-surface-container-low border border-outline-variant/10 flex items-center justify-center min-h-[120px] w-full group-hover:scale-[1.02] transition-all duration-500 shadow-sm group-hover:shadow-ambient">
+<div className="mb-8 p-8 rounded-md bg-surface-container-low border border-outline-variant/10 flex items-center justify-center min-h-30 w-full group-hover:scale-[1.02] transition-all duration-500 shadow-sm group-hover:shadow-ambient">
           <PartnerLogoSVG name={partner.name} />
         </div>
 
@@ -38,11 +38,11 @@ const PartnerCard = ({ partner, index, lang }: { partner: any, index: number, la
         <div className="mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity duration-300">
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            <span className="label-sm !text-[8px] text-on-surface-variant/60 uppercase tracking-widest">
+            <span className="label-sm text-[8px]! text-on-surface-variant/60 uppercase tracking-widest">
               {(t as any).technical?.verifiedNode || "VERIFIED_NODE"}
             </span>
           </div>
-          <span className="label-sm !text-[9px] text-primary/30 uppercase tracking-widest">
+          <span className="label-sm text-[9px]! text-primary/30 uppercase tracking-widest">
             0{index + 1}
           </span>
         </div>
@@ -76,7 +76,7 @@ export const PartnerSection = ({ lang }: { lang: 'en' | 'ar' }) => {
           </h2>
           <div className="flex items-center justify-center gap-2 opacity-30">
             <div className="w-1 h-1 rounded-full bg-on-surface-variant/40" />
-            <span className="label-sm !text-[8px] uppercase tracking-widest">{(t as any).technical?.globalAlliance || "Global_Alliance_Network // Verified"}</span>
+            <span className="label-sm text-[8px]! uppercase tracking-widest">{(t as any).technical?.globalAlliance || "Global_Alliance_Network // Verified"}</span>
             <div className="w-1 h-1 rounded-full bg-on-surface-variant/40" />
           </div>
         </motion.div>
