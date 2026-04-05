@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react'; // Normalized to motion/react
 import { Link, useLocation } from 'react-router-dom';
 import { translations } from '../translations';
@@ -35,14 +35,14 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
           {/* Desktop Matrix */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navItems.map((item) => (
-              <Link key={item.path} to={item.path} className="group relative py-2">
-                <span className={`label-md transition-all duration-300 ${
+              <Link key={item.path} to={item.path} className="group relative py-2 px-3 rounded-md transition-all duration-300 hover:bg-surface-container-low/50">
+                <span className={`label-md transition-all duration-300 font-semibold ${
                   location.pathname === item.path ? 'text-primary' : 'text-on-surface-variant/70 group-hover:text-primary'
                 }`}>
                   {item.label}
                 </span>
                 {location.pathname === item.path && (
-                  <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary" />
+                  <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-1/2 w-3/4 h-0.5 bg-primary -translate-x-1/2" />
                 )}
               </Link>
             ))}
@@ -63,8 +63,9 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
                 </button>
               ))}
             </div>
-            <Link to="/contact" className="btn-primary px-6 py-3 text-[10px]">
-              {t.nav.action}
+            <Link to="/contact" className="btn-primary px-6 py-3 text-[10px] group">
+              <span>{t.nav.action}</span>
+              <ArrowRight className={`ml-2 transition-transform group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} size={12} />
             </Link>
           </div>
 
@@ -110,14 +111,14 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
                   <X size={24} />
                 </button>
               </div>
-              <nav className="space-y-6 grow">
+              <nav className="space-y-4 grow">
                 {navItems.map((item) => (
                   <Link 
                     key={item.path} 
                     to={item.path} 
                     onClick={() => setMobileMenuOpen(false)} 
-                    className={`block headline-md transition-all duration-300 ${
-                      location.pathname === item.path ? `text-primary ${isRtl ? '-translate-x-2' : 'translate-x-2'}` : `text-on-surface-variant/60 hover:text-primary ${isRtl ? 'hover:-translate-x-1' : 'hover:translate-x-1'}`
+                    className={`block headline-md transition-all duration-300 py-3 px-4 rounded-lg ${
+                      location.pathname === item.path ? `text-primary bg-primary/10 ${isRtl ? '-translate-x-2' : 'translate-x-2'}` : `text-on-surface-variant/60 hover:text-primary hover:bg-surface-container-low ${isRtl ? 'hover:-translate-x-1' : 'hover:translate-x-1'}`
                     }`}
                   >
                     {item.label}
@@ -125,8 +126,9 @@ const Nav: React.FC<NavProps> = ({ scrolled, lang, setLang }) => {
                 ))}
               </nav>
               <div className="pt-10 border-t border-outline-variant/10">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-primary w-full">
-                  {t.nav.action}
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-primary w-full group">
+                  <span>{t.nav.action}</span>
+                  <ArrowRight className={`ml-2 transition-transform group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} size={16} />
                 </Link>
               </div>
             </motion.aside>

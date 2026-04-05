@@ -7,12 +7,12 @@ export const translations = {
     },
     "nav": {
       "links": [
-        { "name": "Who We Are", "href": "/about" },
-        { "name": "What We Do", "href": "/services" },
-        { "name": "Our Partners", "href": "/#partners" },
-        { "name": "Get in Touch", "href": "/contact" }
+        { "name": "About", "href": "/about" },
+        { "name": "Services", "href": "/services" },
+        { "name": "Partners", "href": "/#partners" },
+        { "name": "Contact", "href": "/contact" }
       ],
-      "action": "Start Now"
+      "action": "Get Started"
     },
     "hero": {
       "tag": "Sovereign Protocol Active",
@@ -284,10 +284,10 @@ export const translations = {
     },
     "nav": {
       "links": [
-        { "name": "من نحن", "href": "/about" },
-        { "name": "ماذا نقدم", "href": "/services" },
-        { "name": "شركاؤنا", "href": "/#partners" },
-        { "name": "تواصل معنا", "href": "/contact" }
+        { "name": "حولنا", "href": "/about" },
+        { "name": "الخدمات", "href": "/services" },
+        { "name": "الشركاء", "href": "/#partners" },
+        { "name": "تواصل", "href": "/contact" }
       ],
       "action": "ابدأ الآن"
     },

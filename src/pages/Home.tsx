@@ -46,7 +46,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="display-lg text-on-surface"
+                className={`display-lg text-on-surface ${isRtl ? 'text-right' : ''}`}
               >
                 {isRtl ? t.hero.title : (
                   <>
@@ -58,7 +58,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="body-lg text-on-surface-variant max-w-lg"
+                className={`body-lg text-on-surface-variant max-w-lg ${isRtl ? 'text-right' : ''}`}
               >
                 {t.hero.description}
               </motion.p>
@@ -67,13 +67,15 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="flex flex-wrap gap-4 pt-4"
+              className={`flex flex-wrap gap-4 pt-4 ${isRtl ? 'justify-end' : ''}`}
             >
-              <Link to="/contact" className="btn-primary" aria-label={(t.hero as any).ariaConnect}>
-                {t.hero.action}
+              <Link to="/contact" className="btn-primary group" aria-label={(t.hero as any).ariaConnect}>
+                <span>{t.hero.action}</span>
+                <ArrowRight className={`ml-2 transition-transform group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} size={18} />
               </Link>
-              <Link to="/services" className="btn-secondary" aria-label={(t.hero as any).ariaServices}>
-                {t.hero.viewCaseFiles}
+              <Link to="/services" className="btn-secondary group" aria-label={(t.hero as any).ariaServices}>
+                <span>{t.hero.viewCaseFiles}</span>
+                <ShieldCheck className="ml-2" size={18} />
               </Link>
             </motion.div>
           </motion.div>
@@ -84,7 +86,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             transition={{ duration: 1, ease: defaultEase }}
             className="relative flex items-center justify-center lg:h-175"
           >
-            <div className="relative w-full aspect-square max-w-125 sm:max-w-105 mx-auto lg:mx-0 lg:-translate-x-12">
+            <div className={`relative w-full aspect-square max-w-125 sm:max-w-105 mx-auto lg:mx-0 ${isRtl ? 'lg:translate-x-12' : 'lg:-translate-x-12'}`}>
               {/* Layered Glass Cards */}
               <div className="absolute inset-0 airy-card p-6 flex flex-col justify-between animate-swap-back">
                 <div className="flex justify-between items-start mb-4">
@@ -110,7 +112,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
                       <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span> Active Defense
                     </div>
                   </div>
-                  <div className="space-y-1 text-right">
+                  <div className={`space-y-1 ${isRtl ? 'text-left' : 'text-right'}`}>
                     <div className="label-sm opacity-60">Uptime</div>
                     <div className="label-md">99.998%</div>
                   </div>

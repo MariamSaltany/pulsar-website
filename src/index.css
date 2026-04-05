@@ -127,6 +127,31 @@
     .display-lg, .display-md, .headline-lg, .headline-md { 
       @apply tracking-normal leading-[1.4];
     }
+    
+    /* RTL Text Alignment */
+    .text-left { @apply text-right; }
+    .text-right { @apply text-left; }
+    
+    /* Improve Arabic text rendering */
+    * {
+      text-align: start;
+    }
+    
+    /* Better spacing for Arabic text */
+    p, span, div {
+      line-height: 1.6;
+    }
+    
+    /* Form inputs in RTL */
+    input, textarea {
+      text-align: right;
+    }
+    
+    /* Preserve LTR for specific content */
+    .ltr-content {
+      direction: ltr;
+      text-align: left;
+    }
   }
 }
 
@@ -145,17 +170,19 @@
 
   /* --- BUTTONS --- */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center px-8 py-4 
-           bg-linear-to-br from-primary to-primary-container text-white 
-           rounded-md font-display font-bold tracking-[0.02em] transition-all duration-300
-           hover:opacity-90 active:scale-95;
+    @apply relative inline-flex items-center justify-center px-8 py-4
+           bg-linear-to-br from-primary via-primary to-primary-container text-white
+           rounded-lg font-display font-bold tracking-[0.02em] transition-all duration-300
+           shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40
+           hover:scale-105 active:scale-95 border border-primary/20;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-8 py-4
-           bg-surface-container-lowest border border-outline-variant/15 rounded-md 
+           bg-surface-container-lowest border-2 border-primary/30 rounded-lg
            text-primary font-display font-bold transition-all duration-300
-           hover:bg-surface-container-low active:scale-95;
+           hover:bg-primary/5 hover:border-primary/50 hover:shadow-md
+           active:scale-95 backdrop-blur-sm;
   }
 
   .btn-tertiary {
