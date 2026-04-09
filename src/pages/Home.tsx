@@ -50,7 +50,7 @@ const Home: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
               >
                 {isRtl ? t.hero.title : (
                   <>
-                    Reliable <span className="text-primary">Security.</span><br />Better Growth.
+                    Secure <span className="text-primary">Systems.</span><br />Accelerated Growth.
                   </>
                 )}
               </motion.h1>

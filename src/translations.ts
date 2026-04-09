@@ -15,51 +15,51 @@ export const translations = {
       "action": "Get Started"
     },
     "hero": {
-      "tag": "Sovereign Protocol Active",
-      "title": "Reliable Security. Better Growth.",
-      "description": "Pulsar Strategic architecting the next era of digital autonomy. High-fidelity defense mechanisms for the modern enterprise ecosystem.",
-      "action": "Connect With Us",
-      "ariaConnect": "Connect with our technical architects",
-      "viewCaseFiles": "View Our Services",
+      "tag": "Elite Cybersecurity Active",
+      "title": "Secure Systems. Accelerated Growth.",
+      "description": "Pulsar delivers comprehensive cybersecurity and digital transformation solutions for modern enterprises. Advanced protection meets strategic innovation.",
+      "action": "Start Your Assessment",
+      "ariaConnect": "Connect with our security architects",
+      "viewCaseFiles": "Explore Our Services",
       "ariaServices": "View our cybersecurity and digital transformation services",
-      "status": "BENGHAZI_01 // ACTIVE",
+      "status": "BENGHAZI_HQ // OPERATIONAL",
       "quote": {
-        "text": "\"Growth without security is a liability. Security without growth is stagnation. We deliver the balance.\"",
+        "text": "\"Security without growth creates barriers. Growth without security invites risk. We deliver both in perfect balance.\"",
         "segments": [
-          { "text": "\"Growth without security is a ", "highlight": false },
-          { "text": "liability", "highlight": true },
-          { "text": ". Security without growth is ", "highlight": false },
-          { "text": "stagnation", "highlight": true },
-          { "text": ". We deliver the balance.\"", "highlight": false }
+          { "text": "\"Security without growth creates ", "highlight": false },
+          { "text": "barriers", "highlight": true },
+          { "text": ". Growth without security invites ", "highlight": false },
+          { "text": "risk", "highlight": true },
+          { "text": ". We deliver both in perfect balance.\"", "highlight": false }
         ],
-        "author": "Pulsar Strategic Mandate"
+        "author": "Pulsar Strategic Framework"
       }
     },
     "about": {
-      "tag": "Identity & Vision",
-      "title": "Architecting Digital Sovereignty.",
-      "description": "Neutralizing complex threat vectors through engineered resilience and high-authority infrastructure.",
+      "tag": "Our Identity & Vision",
+      "title": "Engineering Digital Security.",
+      "description": "We neutralize complex cyber threats through proven security frameworks and enterprise-grade infrastructure solutions.",
       "status": {
-        "latency": "Latency",
+        "latency": "Response Time",
         "encryption": "Encryption",
         "identity": "Identity",
         "verified": "VERIFIED"
       },
       "mission": {
-        "title": "The Mission",
-        "content": "\"To engineer high-authority infrastructure for entities that demand absolute autonomy and tactical resilience.\""
+        "title": "Our Mission",
+        "content": "\"To build secure, resilient infrastructure for organizations that demand absolute protection and operational continuity.\""
       },
       "vision": {
-        "title": "The Vision",
-        "content": "\"To define the global standard for secure-by-design architecture, where growth and security exist in perfect, automated equilibrium.\""
+        "title": "Our Vision",
+        "content": "\"To set the global standard for security-first architecture, where business growth and cybersecurity protection work together seamlessly.\""
       },
       "methodology": {
-        "tag": "The Sovereign Loop",
+        "tag": "Our Process",
         "title": "Methodology",
         "steps": [
-          { "title": "Audit", "description": "Comprehensive risk mapping across all digital asset layers." },
-          { "title": "Architect", "description": "Bespoke blueprints designed for sovereign operational command." },
-          { "title": "Deploy", "description": "Technical migration with zero-downtime tactical integration." }
+          { "title": "Assess", "description": "Comprehensive security evaluation across all digital assets and infrastructure layers." },
+          { "title": "Design", "description": "Custom security architectures designed for operational excellence and threat prevention." },
+          { "title": "Implement", "description": "Seamless deployment with zero-downtime integration and continuous monitoring." }
         ]
       },
       "values": {
@@ -68,30 +68,30 @@ export const translations = {
         "items": [
           {
             "title": "Integrity",
-            "description": "Zero-compromise engineering. We maintain an absolute ethical standard in every layer of the stack.",
-            "footer": "Standard: 0-COMPROMISE"
+            "description": "Uncompromising security standards. We maintain the highest ethical standards across every layer of our solutions.",
+            "footer": "Standard: ZERO-COMPROMISE"
           },
           {
             "title": "Innovation",
-            "description": "Predictive architecture. Constant evolution to outpace global threat actors through intelligent design.",
+            "description": "Forward-thinking security. Constant evolution to stay ahead of emerging cyber threats through intelligent design.",
             "footer": "Protocol: PREDICTIVE-V4"
           },
           {
             "title": "Sustainability",
-            "description": "Post-quantum resilience. Building systems designed to endure the shift to future computing paradigms.",
-            "footer": "Lifecycle: POST-QUANTUM"
+            "description": "Future-proof security. Building systems designed to withstand evolving cyber threats and technological changes.",
+            "footer": "Lifecycle: FUTURE-READY"
           }
         ]
       }
     },
   "services": {
     "tag": "Technical Capabilities",
-    "heroTitle": "Strategic Solutions.",
-    "heroTitleLines": ["Strategic", "Solutions."],
-    "heroDesc": "Architecting digital resilience through aggressive cybersecurity and sovereign digital transformation.",
+    "heroTitle": "Comprehensive Solutions.",
+    "heroTitleLines": ["Comprehensive", "Solutions."],
+    "heroDesc": "Building digital resilience through advanced cybersecurity and strategic digital transformation services.",
     "cybersecurity": {
-      "title": "Cybersecurity Ops",
-      "desc": "Real-time threat mitigation and systemic hardening for high-stakes infrastructure.",
+      "title": "Cybersecurity Services",
+      "desc": "Real-time threat protection and system hardening for critical infrastructure and business operations.",
       "division": "Division 01",
       "categories": [
         {
@@ -240,9 +240,9 @@ export const translations = {
         "submit": "SEND MESSAGE"
       },
       "success": {
-        "title": "Message Received",
-        "description": "Transmission successful. An advisor will respond within 24 hours",
-        "action": "[ New Message ]"
+        "title": "Message Sent Successfully",
+        "description": "Thank you for your inquiry. Our security team will review your requirements and respond within 24 hours.",
+        "action": "[ Send Another Message ]"
       }
     },
     "system": {
@@ -292,51 +292,51 @@ export const translations = {
       "action": "ابدأ الآن"
     },
     "hero": {
-      "tag": "بروتوكول السيادة نشط",
-      "title": "أمان موثوق. نمو مستدام.",
-      "description": "بلسار الاستراتيجية تهندس العصر القادم من الاستقلالية الرقمية. آليات دفاع عالية الدقة للنظام البيئي للمؤسسات الحديثة.",
-      "action": "تواصل معنا",
-      "ariaConnect": "تواصل مع مهندسينا المعماريين",
-      "viewCaseFiles": "عرض خدماتنا",
+      "tag": "الأمن السيبراني المتقدم نشط",
+      "title": "أنظمة آمنة. نمو متسارع.",
+      "description": "تقدم بلسار حلولاً شاملة في الأمن السيبراني والتحول الرقمي للمؤسسات الحديثة. الحماية المتقدمة تلتقي بالابتكار الاستراتيجي.",
+      "action": "ابدأ التقييم",
+      "ariaConnect": "تواصل مع مهندسي الأمن لدينا",
+      "viewCaseFiles": "استكشف خدماتنا",
       "ariaServices": "عرض خدمات الأمن السيبراني والتحول الرقمي لدينا",
-      "status": "بنغازي_01 // نشط",
+      "status": "مقر بنغازي // يعمل",
       "quote": {
-        "text": "\"النمو بدون أمن هو مسؤولية قانونية. الأمن بدون نمو هو ركود. نحن نقدم التوازن.\"",
+        "text": "\"الأمن بدون نمو يخلق حواجز. النمو بدون أمن يدعو المخاطر. نحن نقدم كليهما في توازن مثالي.\"",
         "segments": [
-          { "text": "\"النمو بدون أمن هو ", "highlight": false },
-          { "text": "مسؤولية", "highlight": true },
-          { "text": " قانونية. الأمن بدون نمو هو ", "highlight": false },
-          { "text": "ركود", "highlight": true },
-          { "text": ". نحن نقدم التوازن.\"", "highlight": false }
+          { "text": "\"الأمن بدون نمو يخلق ", "highlight": false },
+          { "text": "حواجز", "highlight": true },
+          { "text": ". النمو بدون أمن يدعو ", "highlight": false },
+          { "text": "المخاطر", "highlight": true },
+          { "text": ". نحن نقدم كليهما في توازن مثالي.\"", "highlight": false }
         ],
-        "author": "تفويض بلسار الاستراتيجي"
+        "author": "إطار بلسار الاستراتيجي"
       }
     },
     "about": {
-      "tag": "الهوية والرؤية",
-      "title": "هندسة السيادة الرقمية.",
-      "description": "تحييد نواقل التهديد المعقدة من خلال المرونة الهندسية والبنية التحتية عالية السلطة.",
+      "tag": "هويتنا ورؤيتنا",
+      "title": "هندسة الأمن الرقمي.",
+      "description": "نحيد التهديدات السيبرانية المعقدة من خلال أطر أمنية مثبتة وحلول بنية تحتية على مستوى المؤسسات.",
       "status": {
-        "latency": "الكمون",
+        "latency": "وقت الاستجابة",
         "encryption": "التشفير",
         "identity": "الهوية",
         "verified": "تم التحقق"
       },
       "mission": {
-        "title": "المهمة",
-        "content": "\"هندسة بنية تحتية عالية السلطة للكيانات التي تتطلب استقلالية مطلقة ومرونة تكتيكية.\""
+        "title": "مهمتنا",
+        "content": "\"بناء بنية تحتية آمنة ومرنة للمؤسسات التي تتطلب حماية مطلقة واستمرارية تشغيلية.\""
       },
       "vision": {
-        "title": "الرؤية",
-        "content": "\"تحديد المعيار العالمي للهندسة المعمارية الآمنة حسب التصميم، حيث يوجد النمو والأمان في توازن مثالي ومؤتمت.\""
+        "title": "رؤيتنا",
+        "content": "\"تحديد المعيار العالمي للهندسة المعمارية التي تضع الأمن أولاً، حيث يعمل نمو الأعمال وحماية الأمن السيبراني معاً بسلاسة.\""
       },
       "methodology": {
-        "tag": "حلقة السيادة",
+        "tag": "عمليتنا",
         "title": "المنهجية",
         "steps": [
-          { "title": "التدقيق", "description": "رسم خرائط المخاطر الشاملة عبر جميع طبقات الأصول الرقمية." },
-          { "title": "الهندسة", "description": "مخططات مخصصة مصممة للقيادة العملياتية السيادية." },
-          { "title": "النشر", "description": "الترحيل التقني مع تكامل تكتيكي بدون توقف." }
+          { "title": "التقييم", "description": "تقييم أمني شامل عبر جميع الأصول الرقمية وطبقات البنية التحتية." },
+          { "title": "التصميم", "description": "هندسة أمنية مخصصة مصممة للتميز التشغيلي ومنع التهديدات." },
+          { "title": "التنفيذ", "description": "نشر سلس مع تكامل بدون توقف ومراقبة مستمرة." }
         ]
       },
       "values": {
@@ -345,30 +345,30 @@ export const translations = {
         "items": [
           {
             "title": "النزاهة",
-            "description": "هندسة عدم المساومة. نحن نحافظ على معيار أخلاقي مطلق في كل طبقة من طبقات النظام.",
-            "footer": "المعيار: 0-مساومة"
+            "description": "معايير أمنية لا تتنازل. نحافظ على أعلى المعايير الأخلاقية عبر كل طبقة من حلولنا.",
+            "footer": "المعيار: صفر تنازل"
           },
           {
             "title": "الابتكار",
-            "description": "هندسة معمارية تنبؤية. تطور مستمر للتفوق على الجهات الفاعلة في التهديد العالمي من خلال التصميم الذكي.",
+            "description": "أمن يفكر في المستقبل. تطور مستمر للبقاء أمام التهديدات السيبرانية الناشئة من خلال التصميم الذكي.",
             "footer": "البروتوكول: PREDICTIVE-V4"
           },
           {
             "title": "الاستدامة",
-            "description": "المرونة لما بعد الكم. بناء أنظمة مصممة لتحمل التحول إلى نماذج الحوسبة المستقبلية.",
-            "footer": "دورة الحياة: POST-QUANTUM"
+            "description": "أمن مقاوم للمستقبل. بناء أنظمة مصممة لتحمل التهديدات السيبرانية المتطورة والتغييرات التكنولوجية.",
+            "footer": "دورة الحياة: جاهز للمستقبل"
           }
         ]
       }
     },
     "services": {
       "tag": "القدرات التقنية",
-      "heroTitle": "حلول استراتيجية.",
-      "heroTitleLines": ["حلول", "استراتيجية."],
-      "heroDesc": "هندسة الصمود الرقمي من خلال الأمن السيبراني الهجومي والتحول الرقمي السيادي.",
+      "heroTitle": "حلول شاملة.",
+      "heroTitleLines": ["حلول", "شاملة."],
+      "heroDesc": "بناء الصمود الرقمي من خلال خدمات الأمن السيبراني المتقدم والتحول الرقمي الاستراتيجي.",
       "cybersecurity": {
-        "title": "عمليات الأمن السيبراني",
-        "desc": "تخفيف التهديدات في الوقت الفعلي وتحصين الأنظمة للبنى التحتية الحساسة.",
+        "title": "خدمات الأمن السيبراني",
+        "desc": "حماية التهديدات في الوقت الفعلي وتعزيز الأنظمة للبنية التحتية الحرجة وعمليات الأعمال.",
         "division": "القسم 01",
         "categories": [
           {
@@ -517,9 +517,9 @@ export const translations = {
         "submit": "إرسال رسالة"
       },
       "success": {
-        "title": "تم استلام الرسالة",
-        "description": "نجح الإرسال سيرد مستشار تقني خلال 24 ساعة",
-        "action": "[ إرسال رسالة جديدة ]"
+        "title": "تم إرسال الرسالة بنجاح",
+        "description": "شكراً لاستفسارك. سيقوم فريق الأمن لدينا بمراجعة متطلباتك والرد خلال 24 ساعة.",
+        "action": "[ إرسال رسالة أخرى ]"
       }
     },
     "system": {

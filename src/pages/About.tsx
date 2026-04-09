@@ -43,9 +43,9 @@ const About: React.FC<{ lang: 'en' | 'ar' }> = ({ lang }) => {
             
             <h1 className="text-4xl md:text-6xl lg:display-lg text-on-surface mb-6 lg:mb-12 font-bold leading-tight">
               {isRtl ? (
-                <>هندسة <br/><span className="text-pulsar-red">السيادة الرقمية.</span></>
+                <>هندسة <br/><span className="text-pulsar-red">الأمن الرقمي.</span></>
               ) : (
-                <>Architecting <br/><span className="text-pulsar-red">Digital Sovereignty.</span></>
+                <>Engineering <br/><span className="text-pulsar-red">Digital Security.</span></>
               )}
             </h1>
             
